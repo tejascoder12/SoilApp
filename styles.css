@@ -1,0 +1,191 @@
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #000000; /* Set font color to black */
+    font-family: 'Arial', sans-serif;
+}
+/* Custom Styles */
+
+
+.navbar {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.nav-link,
+.btn {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    border: 2px solid #2980b9;
+    color: #ecf0f1;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover,
+.btn:hover {
+    background: linear-gradient(to right, #2980b9, #27ae60);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-user-icon {
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+#sensor-reading,
+#user-profile,
+#ml-suggestions {
+    background: linear-gradient(to right, #fff, #ecf0f1);
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}body {
+    background: linear-gradient(to right, #ecf0f1, #bdc3c7);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.custom-box {
+    background-color: #3498db; /* Set background color for the box */
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000; /* Set font color to black */
+}
+
+.custom-box h2 {
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.custom-box p {
+    margin-top: 15px;
+}
+/* Button Styles */
+.custom-box button {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    border: 2px solid #2980b9;
+    color: #ecf0f1;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.custom-box button:hover {
+    background: linear-gradient(to right, #2980b9, #27ae60);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Refresh Reading Button Styles */
+#sensor-reading button {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    border: 2px solid #2980b9;
+    color: #ecf0f1;
+}
+
+#sensor-reading button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+button {
+    background: linear-gradient(to right, #1e90ff, #007bff);
+    color: #000000; /* Set font color to black */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(to right, #007bff, #265c97);
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Page Styles */
+.login-page {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #ffffff;
+}
+
+#login-form {
+    background: linear-gradient(to right, #ffffff, #f8f9fa);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Signup Page Styles */
+.signup-page {
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+    color: #ffffff;
+}
+
+#signup-form {
+    background: linear-gradient(to right, #ffffff, #f8f)
+
+}
+/* ... (unchanged code) ... */
+
+/* User Profile Styles */
+#user-profile {
+    text-align: center;
+}
+
+#profile-username {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Navigation Bar Styles */
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #000000 !important;
+}
+
+.user-options a {
+    color: #050507; /* Change this color to your desired color */
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+.user-options a:hover {
+    background-color: #fda309; /* Change this color to your desired hover color */
+}
+
+.nav-user-avatar {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* ... (unchanged code) ... */

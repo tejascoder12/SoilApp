@@ -1,0 +1,113 @@
+<!-- update-profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Smart Agriculture Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Smart Agriculture</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.html" id="edit-profile-nav">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" id="logout-nav">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Edit Profile</h2>
+            <form id="update-profile-form">
+                <div class="form-group">
+                    <label for="profile-picture">Profile Picture URL:</label>
+                    <input type="text" class="form-control" id="profile-picture" placeholder="Enter profile picture URL">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter city">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="updateProfile()">Save Changes</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+<script>
+    // Fetch initial user profile data
+    fetchAndUpdateProfile();
+
+    function fetchAndUpdateProfile() {
+        fetch('/api/getUserProfile')
+            .then(response => response.json())
+            .then(data => updateProfileUI(data))
+            .catch(error => console.error('Error fetching and updating profile:', error));
+    }
+
+    function updateProfileUI(profileData) {
+        // Update the user interface with the latest data
+        document.getElementById('profile-picture').src = profileData.profilePicture;
+        document.getElementById('profile-username').innerText = profileData.username;
+        document.getElementById('profile-email').innerText = profileData.email;
+        document.getElementById('profile-city').innerText = profileData.city;
+    }
+
+    function updateProfile() {
+        const profilePicture = document.getElementById('profile-picture').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const city = document.getElementById('city').value;
+
+        // Send the updated profile data to the server
+        fetch('/api/updateUserProfile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                userId: 1, // Replace with the actual user ID
+                newProfileData: { profilePicture, username, email, city },
+            }),
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Profile updated successfully!');
+                // Fetch and update the profile UI immediately after updating
+                fetchAndUpdateProfile();
+            } else {
+                alert(result.message);
+            }
+        })
+        .catch(error => console.error('Error updating profile:', error));
+    }
+</script>
+</body>
+</html>
